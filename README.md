@@ -3,4 +3,6 @@ this is simple time
 
 
 
-## PREVIE
+## PREVIEW LINK 
+
+https://s4ntys.github.io/clock-time/
