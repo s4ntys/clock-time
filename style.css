@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(19, 16, 16, 0.774);
+}
+
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(88, 31, 31, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.425);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation-name: shadowAnim;
+    animation-duration: 2s; /* Dĺžka animácie */
+    animation-timing-function: ease-in-out; /* Funkcia prebehnutia animácie */
+    animation-iteration-count: infinite; /* Nekonečná opakovanie animácie */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i))); 
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+
+@keyframes shadowAnim {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Začiatočný a koncový tieň */
+    }
+    33% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Červený tieň */
+    }
+    66% {
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Zelený tieň */
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(0, 0, 255, 0.7); /* Modrý tieň */
+    }
+  }
